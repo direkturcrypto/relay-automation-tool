@@ -51,12 +51,14 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y nodejs npm git
 
 # Update to a newer Node.js version
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install 22
 
 # Verify installation
-node -v  # Should show v18.x.x
-npm -v   # Should show 8.x.x or higher
+nvm current
+node -v  # Should show v22.x.x
+npm -v   # Should show 22.x.x or higher
 ```
 
 ### 2. Clone Repository and Install Dependencies
@@ -66,7 +68,7 @@ npm -v   # Should show 8.x.x or higher
 mkdir -p ~/relay-bot && cd ~/relay-bot
 
 # Clone the repository
-git clone https://github.com/yourusername/relay-wash-trade-bot.git .
+git clone https://github.com/direkturcrypto/relay-automation-tool .
 
 # Install dependencies
 npm install
@@ -90,10 +92,6 @@ BASE_RPC_URL=https://base.llamarpc.com
 ARBITRUM_RPC_URL=https://arbitrum.llamarpc.com
 OPTIMISM_RPC_URL=https://optimism.llamarpc.com
 LINEA_RPC_URL=https://linea.llamarpc.com
-
-# API Keys
-ONEINCH_API_KEY=your_1inch_api_key_here
-RELAY_API_KEY=your_relay_api_key_here
 
 # Configuration
 SLIPPAGE_TOLERANCE=0.5
