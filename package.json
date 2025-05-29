@@ -1,0 +1,33 @@
+{
+  "name": "relay-cross-chain-bridge-bot",
+  "version": "1.0.0",
+  "description": "Automated cross-chain bridge bot for moving funds between multiple L2 networks using Relay protocol",
+  "main": "scripts/bridge.js",
+  "scripts": {
+    "start": "node scripts/bridge.js",
+    "generate": "node scripts/generate.js",
+    "topup": "node scripts/topup.js",
+    "withdraw": "node scripts/withdraw.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "relay",
+    "crypto",
+    "bridge",
+    "cross-chain",
+    "ethereum",
+    "base",
+    "arbitrum",
+    "optimism",
+    "linea",
+    "weth",
+    "usdc"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "ethers": "^5.7.2"
+  }
+}
