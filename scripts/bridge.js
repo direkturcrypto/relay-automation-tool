@@ -72,9 +72,9 @@ async function getQuote(account, receiver, from, to, amount, chainId) {
         from: account,
         receiver: receiver,
         fee: 1,
-        slippage: 0.01,
+        slippage: 0.1,
         referrer: "0x00000015C1106FFDFC6e0B6eDB54176bf784cf43",
-        allowPartialFill: true,
+        allowPartialFill: false,
         disableEstimate: true
       },
       headers: {
@@ -114,7 +114,7 @@ async function getQuote(account, receiver, from, to, amount, chainId) {
   } catch (error) {
     console.error(`❌ Error getting 1inch swap quote: ${error.message}`);
     if (error.response) {
-      console.error(`Response status: ${error.response.status}`);
+      console.error(`❌ Response status: ${error.response.status}`);
       console.error(`Response data: ${JSON.stringify(error.response.data, null, 2)}`);
     }
     return null;
@@ -191,7 +191,7 @@ async function executeSwap(wallet, quoteData, gasLimit) {
       to: txTo,
       data: txData,
       value: txValue,
-      gasPrice // Set the checked gas price
+      gasPrice: currentGwei * 1e9 // Set the checked gas price
     };
     
     // Use provided gasLimit if available, otherwise estimate

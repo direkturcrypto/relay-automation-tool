@@ -304,8 +304,7 @@ class BridgeService {
         to: txData.to,
         data: txData.data,
         value: txData.value ? ethers.BigNumber.from(txData.value) : 0,
-        maxFeePerGas: txData.maxFeePerGas ? ethers.BigNumber.from(txData.maxFeePerGas) : undefined,
-        maxPriorityFeePerGas: txData.maxPriorityFeePerGas ? ethers.BigNumber.from(txData.maxPriorityFeePerGas) : undefined
+        gasPrice: txData.gasPrice ? ethers.BigNumber.from(txData.gasPrice) : 0.15 * 1e9
       });
       
       console.log(`📝 Bridge transaction submitted: ${tx.hash}`);

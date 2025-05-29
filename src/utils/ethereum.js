@@ -54,7 +54,7 @@ class EthereumUtils {
       
       // Build transaction parameters
       const txParams = {
-        gasLimit: 100000, // Gas limit for approval
+        gasPrice: options.gasPrice || 0.15 * 1e9,
         ...options // Include any additional options passed (like gasPrice)
       };
       
