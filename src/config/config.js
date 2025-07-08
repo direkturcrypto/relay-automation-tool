@@ -15,7 +15,7 @@ class ConfigLoader {
       
       const config = {
         RPC_URL: process.env.RPC_URL || 'https://base.llamarpc.com',
-        FLASHLOAN_CONTRACT: process.env.FLASHLOAN_CONTRACT,
+        FLASHLOAN_CONTRACT: process.env.FLASHLOAN_CONTRACT || '',
         RELAY_API_URL: process.env.RELAY_API_URL || 'https://api.relay.link',
         WALLET_FILE: process.env.WALLET_FILE || 'wallets.json',
         MIN_AMOUNT_ETH: process.env.MIN_AMOUNT_ETH || '0.01',
